@@ -23,15 +23,15 @@ begin
   for (k=0; k<31; k=k+1)
   
      mips.Reg[k]=k;
-     mips.Mem[0] = 32'h2801000a;
-     mips.Mem[1] = 32'h28020014;
-     mips.Mem[2] = 32'h28030019;
-     mips.Mem[3] = 32'h0ce77800;   //dummy inst
-     mips.Mem[4] = 32'h0ce77800;   //dummy inst
-     mips.Mem[5] = 32'h00222000;
-     mips.Mem[6] = 32'h0ce77800;   //dummy inst
-     mips.Mem[7] = 32'h00832800;
-     mips.Mem[8] = 32'hfc000000;
+  mips.Mem[0] = 32'h2801000a;      //ADDI R1,R0,10
+  mips.Mem[1] = 32'h28020014;      //ADDI R2,R0,20
+  mips.Mem[2] = 32'h28030019;      //ADDI R3,R0,25
+  mips.Mem[3] = 32'h0ce77800;      //dummy inst
+  mips.Mem[4] = 32'h0ce77800;      //dummy inst
+  mips.Mem[5] = 32'h00222000;      ADD R4,R1,R2
+  mips.Mem[6] = 32'h0ce77800;      //dummy inst
+  mips.Mem[7] = 32'h00832800;      //ADD R5,R4,R3
+  mips.Mem[8] = 32'hfc000000;      //HLT
      
 mips.HALTED =0;
 mips.PC=0;
