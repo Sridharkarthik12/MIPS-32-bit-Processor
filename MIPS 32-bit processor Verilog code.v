@@ -82,6 +82,8 @@ endcase
 
 end
 
+ //Instruction Execution Stage
+ 
 always @(posedge clk1)
 if(HALTED ==0)
 begin
